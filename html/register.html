@@ -1,72 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Form</title>
+ <title>
+      Student Registration Form
+ </title>
 </head>
-<body>
-    <h1 align="center">Registration Form</h1>
-    <form>
-        <table align="center">
-            <tr> 
-                <td>Name</td> <td><input type="text" placeholder="Enter your Name"></td>
+<body bgcolor="grey">
+          <div><center>
+          <form>
+             <h2>Student Registration Form</h2>
+             <br>
+             <table>
+             <tr><td>First Name</td>
+             <td><input type="text" placeholder="Enter your first name" ></td>
             </tr>
-            <tr>
-                <td>Reg. No.</td> <td><input type="number" placeholder="Enter your Register No."></td>
-            </tr>
-            <tr>
-                <td>Dept.</td> 
-                <td>
-                    <select>
-                        <option>IT</option>
-                        <option>CSE</option>
-                        <option>ECE</option>
-                        <option>EEE</option>
-                        <option>MECH</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>Gender</td>
-                <td>
-                    <select>
-                        <option>Male</option>
-                        <option>Female</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>Age</td> <td><input type="number" placeholder="Enter your Age"></td>
-            </tr>
-            <tr>
-                <td>Email Address</td> <td><input type="email" placeholder="Enter your Email"></td>
-            </tr>
-            <tr>
-                <td>Mobile Number</td> <td><input type="number" placeholder="Enter your Mobile No."></td>
-            </tr>
-            <tr>
-                <td>D.O.B</td><td><input type="date"></td>
-            </tr>
-            <tr>
-                <td>Place of Birth</td><td><input type="text" placeholder="Enter your Birth Place"></td>
-            </tr>
-            <tr>
-                  <td>10th Percentage</td><td><input type="number" placeholder="Enter your 10th %" ></td>
-            </tr>
-            <tr>
-                <td>12th Percentage</td><td><input type="number" placeholder="Enter your 12th %"></td>
-          </tr>
-          <tr>
-            <td>CGPA</td><td><input type="number" placeholder="Enter your CGPA"></td>
-          </tr>
-      <tr>
-        <td>Area of Interest</td><td><input type="text" placeholder="Enter your Interest"></td>
-      </tr>
-          <tr>
-                <td><button>Register</button></td>
-            </tr>
-        </table>
-    </form>
+             <br>
+             
+             <br>
+             <label><b>Last Name</b></label>
+             <input type="text" placeholder="Enter your last name">
+             <br>
+             <br>
+             <label><b>E-mail</b></label>
+             <input type="email" placeholder="Enter your e-mail">
+             <br>
+             <br>
+             <label><b>Date of Birth</b></label>
+             <input type="date">
+             <br>
+             <br>
+             <label><b>Set Username</b></label>
+             <input type="text" placeholder="Username">
+             <br>
+             <br>
+             <label><b>Set Password</b></label>
+             <input type="password" placeholder="password">
+             <br>
+             
+             <br>
+             <tr><td>Gender</td></tr>
+             <input type="radio" name="Gender"/>Male
+            <input type="radio" name="Gender"/>Female
+             <input type="radio" name="grnder"/>Others
+             <br>
+              
+            <br>
+            <label><b>Course :</b></label>   
+                 <select>
+                       <option value="Course">Course</option>    
+                       <option value="CS">Computer Fundamentals</option>  
+                       <option value="AI">Artificial Intelligence</option>  
+                       <option value="ML">Machine Learning</option>  
+                       <option value="OOPS">Object Oriented Programming</option>  
+                       <option value="DBMS">Database Management System</option>   
+                 </select>
+           <br>
+           <br>
+           <input type="button" value="Register"/> </table>
+          </form>
+        </center></div>
 </body>
 </html>
