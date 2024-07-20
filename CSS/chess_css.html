@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkerboard</title>
+    <style>
+
+        
+        body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: white;
+}
+
+.checkerboard {
+    display: grid;
+    grid-template-columns: repeat(8, 50px);
+    grid-template-rows: repeat(8, 50px);
+    gap: 0;
+}
+
+.row {
+    display: contents;
+}
+
+.square {
+    width: 50px;
+    height: 50px;
+}
+
+.black {
+    background-color: black;
+}
+
+.pink {
+    background-color: pink;
+}
+.checkerboard{
+    border: 5px solid rgb(10, 199, 205);
+}
+    </style>
+</head>
+<body>
+    <h1>Chess board</h1>
+    <div class="checkerboard">
+        <!-- Rows -->
+        <div class="row">
+            <!-- Columns -->
+            <div class="square black"></div>
+            <div class="square pink"></div>
+            <div class="square black"></div>
+            <div class="square pink"></div>
+            <div class="square black"></div>
+            <div class="square pink"></div>
+            <div class="square black"></div>
+            <div class="square pink"></div>
+        </div>
+        <div class="row">
+            <div class="square pink"></div>
+            <div class="square black"></div>
+            <div class="square pink"></div>
+            <div class="square black"></div>
+            <div class="square pink"></div>
+            <div class="square black"></div>
+            <div class="square pink"></div>
+            <div class="square black"></div>
+        </div>
+        <div class="row">
+            <div class="square black"></div>
+            <div class="square pink"></div>
+            <div class="square black"></div>
+            <div class="square pink"></div>
+            <div class="square black"></div>
+            <div class="square pink"></div>
+            <div class="square black"></div>
+            <div class="square pink"></div>
+        </div>
+        <div class="row">
+            <div class="square pink"></div>
+            <div class="square black"></div>
+            <div class="square pink"></div>
+            <div class="square black"></div>
+            <div class="square pink"></div>
+            <div class="square black"></div>
+            <div class="square pink"></div>
+            <div class="square black"></div>
+        </div>
+        <div class="row">
+            <div class="square black"></div>
+            <div class="square pink"></div>
+            <div class="square black"></div>
+            <div class="square pink"></div>
+            <div class="square black"></div>
+            <div class="square pink"></div>
+            <div class="square black"></div>
+            <div class="square pink"></div>
+        </div>
+        <div class="row">
+            <div class="square pink"></div>
+            <div class="square black"></div>
+            <div class="square pink"></div>
+            <div class="square black"></div>
+            <div class="square pink"></div>
+            <div class="square black"></div>
+            <div class="square pink"></div>
+            <div class="square black"></div>
+        </div>
+        <div class="row">
+            <div class="square black"></div>
+            <div class="square pink"></div>
+            <div class="square black"></div>
+            <div class="square pink"></div>
+            <div class="square black"></div>
+            <div class="square pink"></div>
+            <div class="square black"></div>
+            <div class="square pink"></div>
+        </div>
+        <div class="row">
+            <div class="square pink"></div>
+            <div class="square black"></div>
+            <div class="square pink"></div>
+            <div class="square black"></div>
+            <div class="square pink"></div>
+            <div class="square black"></div>
+            <div class="square pink"></div>
+            <div class="square black"></div>
+        </div>
+        <!-- Add more rows as needed -->
+    </div>
+</body>
+</html>
