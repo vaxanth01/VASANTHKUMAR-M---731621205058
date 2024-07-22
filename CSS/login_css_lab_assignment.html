@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Window</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <img src="./img/avathar.jpeg" alt="Avatar" class="avatar">
+            <h2>Login Window</h2>
+            <form action="#" method="post">
+                <div class="textbox">
+                    <input type="text" placeholder="Email Address" name="email" required>
+                </div>
+                <div class="textbox">
+                    <input type="password" placeholder="Password" name="password" required>
+                </div>
+                <div class="checkbox">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms" style="color: #fff;">Agree With <a href="#">Terms & Condition</a></label>
+                </div>
+                <button type="submit" class="btn">Login</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+</html>
+<style>
+   body {
+    margin: 0;
+    padding: 0;
+    background: url('./img/bg.jpg') no-repeat center center fixed; 
+    background-size: cover;
+}
+
+.login-container {
+    width: 100%;
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.login-box {
+    width: 300px;
+    padding: 40px;
+    position: relative;
+    text-align: center;
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+}
+
+.login-box .avatar {
+    width: 100px;
+    height: 70px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    left: 140px;
+    /* left: calc(50% - 50px); */
+}
+
+.login-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.login-box .textbox {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.login-box .textbox input {
+    width: 100%;
+    padding: 10px 0;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    font-size: 18px;
+    outline: none;
+}
+
+.login-box .textbox input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.login-box .checkbox {
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.login-box .checkbox input {
+    margin-right: 10px;
+}
+
+.login-box .checkbox a {
+    color: #00c3ff;
+}
+
+.login-box .btn {
+    width: 100%;
+    background: #00c3ff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #fff;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.login-box .btn:hover {
+    background: #0097e6;
+}
+
+</style>
