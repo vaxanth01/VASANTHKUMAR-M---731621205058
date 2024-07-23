@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Functions</title>
+</head>
+<body>
+    <script>
+        function processString() {
+            var str = document.getElementById("inputString").value;
+            var index = parseInt(document.getElementById("index").value);
+            var start = parseInt(document.getElementById("start").value);
+            var end = parseInt(document.getElementById("end").value);
+            var length = parseInt(document.getElementById("length").value);
+            var substring = document.getElementById("substring").value;
+            var replaceOld = document.getElementById("replaceOld").value;
+            var replaceNew = document.getElementById("replaceNew").value;
+            var delimiter = document.getElementById("delimiter").value;
+
+            document.write("String length: " + str.length + "<br>");
+            document.write("String charAt(" + index + "): " + str.charAt(index) + "<br>");
+            document.write("String slice(" + start + ", " + end + "): " + str.slice(start, end) + "<br>");
+            document.write("String substring(" + start + ", " + end + "): " + str.substring(start, end) + "<br>");
+            document.write("String substr(" + start + ", " + length + "): " + str.substr(start, length) + "<br>");
+            document.write("String toUpperCase(): " + str.toUpperCase() + "<br>");
+            document.write("String toLowerCase(): " + str.toLowerCase() + "<br>");
+            document.write("String concat(' " + substring + " '): " + str.concat(' ', substring) + "<br>");
+            document.write("String trim(): " + str.trim() + "<br>");
+            document.write("String trimStart(): " + str.trimStart() + "<br>");
+            document.write("String trimEnd(): " + str.trimEnd() + "<br>");
+            document.write("String repeat(2): " + str.repeat(2) + "<br>");
+            document.write("String replace('" + replaceOld + "', '" + replaceNew + "'): " + str.replace(replaceOld, replaceNew) + "<br>");
+            document.write("String replaceAll('" + replaceOld + "', '" + replaceNew + "'): " + str.replaceAll(replaceOld, replaceNew) + "<br>");
+            document.write("String split('" + delimiter + "'): " + str.split(delimiter).join(', ') + "<br>");
+        }
+    </script>
+
+    <h2>String Functions</h2>
+    <label>For Find Length Enter a string: 
+        <input type="text" id="inputString">
+    </label><br>
+    <label>For Find Length Enter index for charAt(): 
+        <input type="number" id="index">
+    </label><br>
+    <label>For Find index Enter start index for slice(), substring(), substr(): 
+        <input type="number" id="start">
+    </label><br>
+    <label>Enter end index for slice(), substring(): 
+        <input type="number" id="end">
+    </label><br>
+    <label>Enter length for substr(): 
+        <input type="number" id="length">
+    </label><br>
+    <label>Enter substring for concat(): 
+        <input type="text" id="substring">
+    </label><br>
+    <label>Enter string to replace: 
+        <input type="text" id="replaceOld">
+    </label><br>
+    <label>Enter new string to replace with: 
+        <input type="text" id="replaceNew">
+    </label><br>
+    <label>Enter delimiter for split(): 
+        <input type="text" id="delimiter">
+    </label><br>
+    <button onclick="processString()">Process String</button><br>
+</body>
+</html>

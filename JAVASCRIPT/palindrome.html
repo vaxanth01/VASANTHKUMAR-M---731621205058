@@ -4,24 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Palindrome Checker</title>
-    <script>
-        function palindrome() {
-            var num = parseInt(document.getElementById("num").value);
-            var ispalindrome = true;
-            
-            
-            var result = ispalindrome ? num + " is a palindrome string." : num + " is not a palindrome string.";
-            document.getElementById("factorialresult").innerHTML = result;
-        }
-    </script>
+   
 </head>
 <body>
-    <label>Enter a Number: 
-        <input type="text" id="num">
-    </label><br>
-    <button onclick="ispalindrome()">Check Prime</button><br>
-    <div id="factorialresult">
-    </div>
+    <script>
+        function isPalindrome() {
+            var str = document.getElementById("str").value;
+            var reversedStr = str.split('').reverse().join('');
+            // var result = str === reversedStr ? str + " is a Palindrome." : str + " is not a Palindrome.";
+            if(str === reversedStr){
+                document.write("yes")
+            }
+            else{
+                document.write("no")
+            }
+            // document.getElementById("palindromeResult").innerHTML = result;
+        }
+    </script>
+    <label>Enter a String: <input type="text" id="str"></label><br>
+    <button onclick="isPalindrome()">Check Palindrome</button><br>
+    <div id="palindromeResult"></div>
 </body>
 </html>
-
