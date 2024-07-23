@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pattern Program</title>
+</head>
+<body>
+    <script>
+        function pattern() {
+            var num = parseInt(document.getElementById("num").value);
+            var result = '';
+            for (let i = 1; i <= num; i++) {
+                let row = '';
+                for (let j = 1; j <= i; j++) {
+                    row += '* ';
+                }
+                result += row + '<br>';
+            }
+            document.getElementById("patternresult").innerHTML = result;
+        }
+    </script>
+
+    <label>Enter the number of lines to draw a pattern: 
+        <input type="text" id="num">
+    </label><br>
+    <button onclick="pattern()">Draw Pattern</button><br>
+    <div id="patternresult"></div>
+</body>
+</html>

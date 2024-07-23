@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+    <script>
+        function myfunction(){
+            document.write("<b> javascript function example </b>");
+        }
+        function addition(a,b)
+        {
+            var sum = a+b;
+            document.write("<b>sum: "+sum);
+        }
+        // function sub(a,b)
+        // {
+        //     var sum = a-b;
+        //     document.write("<b>sum: "+sum);
+        // }
+        function subtraction(c,d){
+            var diff=c-d;
+            document.write("<b>sum: "+diff);
+        }
+    </script>
+</head>
+<body>
+    <button onclick="myfunction()">click me</button>
+    <br>
+    <button onclick="addition(10,20)">addition</button>
+    <br>
+    <button onclick="subtraction(20,2)">subtraction</button>
+</body>
+</html>

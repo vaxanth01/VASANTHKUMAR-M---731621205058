@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial Calculator</title>
+    <script>
+        function factorial() {
+            var num = parseInt(document.getElementById("num").value);
+            var result = 1;
+            var i;
+            // if (num < 0) {
+            //     result = "No negative number as input";
+            // } else {
+            //     for (i = 1; i <= num; i++) {
+            //         // result *= i;
+            //         result = result*i
+            //     }
+            //     result = "Factorial of " + num + " is " + result;
+            // }
+            
+
+            for (i=1;i <= num ; i++){
+                result=result * i;
+            }
+            result = "Factorial of " + num + " is " + result;
+
+            document.getElementById("resultdiv").innerHTML = result;
+        }
+    </script>
+</head>
+<body>
+    <label>Enter a Number: 
+        <input type="text" id="num">
+    </label><br>
+    <button onclick="factorial()">Calculate Factorial</button><br>
+    <div id="resultdiv"></div>
+</body>
+</html>
