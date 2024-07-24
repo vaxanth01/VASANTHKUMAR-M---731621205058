@@ -3,57 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
+    <title>Basic Calculator</title>
+    
     <style>
-        body{
+        body {
             margin: 0;
             padding: 0;
             box-sizing: border-box;   
         }
-        .container{
+        .container {
+            height: 100vh;
             display: flex;
-            
+            justify-content: center;
+            align-items: center;
+            background-color: #c4dde3;
         }
+        .calculator {
+            padding: 10px;
+            background-color: #5a788c;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .calculator form {
+            display: flex;
+            flex-direction: column;
+        }
+        .calculator .display input {
+            border-radius: 4px;
+            border: 0;
+            outline: 0;
+            width: 90%;
+            background-color: #0b3a46;
+            color: #fffefe;
+            text-align: right;
+            padding: 15px;
+            font-size: 24px;
+        }
+        .calculator .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .calculator .buttons input[type="button"] {
+            padding: 15px;
+            border-radius: 4px;
+            border: 0;
+            outline: 0;      
+            color: white;
+            background-color: #0b3a46;  
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+        }
+        .calculator .buttons input[type="button"]:hover {
+            background-color: #68aad9;
+        }
+        
     </style>
 </head>
 <body>
     <div class="container">
         <div class="calculator">
-            <div>
-                <input type="text">
-            </div>
-            <div>
-                <input type="text" value="c">
-                <input type="text" value="%">
-                <input type="text" value="#">
-                <input type="text" value="/">
-            </div>
-            <div>    
-                <input type="text" value="7">
-                <input type="text" value="8">
-                <input type="text" value="9">
-                <input type="text" value="*">
-            </div>
-            <div>    
-                <input type="text" value="4">
-                <input type="text" value="5">
-                <input type="text" value="6">
-                <input type="text" value="-">
-            </div>    
-                <input type="text" value="1">
-                <input type="text" value="2">
-                <input type="text" value="3">
-                <input type="text" value="+">
-            </div>
-            </div>    
-                <input type="text" value="0">
-                <input type="text" value="00">
-                <input type="text" value=".">
-                <input type="text" value="=">
-            </div>
-                
+            <form name="calc">
+                <div class="display">
+                    <input type="text" id="display" >
+                </div>
+                <div class="buttons">
+                    <input type="button" value="C" onclick="clearDisplay()">
+                    <input type="button" value="%" onclick="addToDisplay('%')">
+                    <input type="button" value="←" onclick="back()">
+                    <input type="button" value="/" onclick="addToDisplay('/')">
+                    <input type="button" value="7" onclick="addToDisplay('7')">
+                    <input type="button" value="8" onclick="addToDisplay('8')">
+                    <input type="button" value="9" onclick="addToDisplay('9')">
+                    <input type="button" value="*" onclick="addToDisplay('*')">
+                    <input type="button" value="4" onclick="addToDisplay('4')">
+                    <input type="button" value="5" onclick="addToDisplay('5')">
+                    <input type="button" value="6" onclick="addToDisplay('6')">
+                    <input type="button" value="-" onclick="addToDisplay('-')">
+                    <input type="button" value="1" onclick="addToDisplay('1')">
+                    <input type="button" value="2" onclick="addToDisplay('2')">
+                    <input type="button" value="3" onclick="addToDisplay('3')">
+                    <input type="button" value="+" onclick="addToDisplay('+')">
+                    <input type="button" value="0" onclick="addToDisplay('0')">
+                    <input type="button" value="00" onclick="addToDisplay('00')">
+                    <input type="button" value="00" onclick="addToDisplay('00')">
+                    <input type="button" class="equal" value="=" onclick="calculate()">
+                </div>
+            </form>
         </div>
     </div>
+
+    <script>
+        function addToDisplay(value) {
+            document.getElementById('display').value += value;
+        }
+
+        function back(){
+           var r=document.getElementById("display")
+           r.value=r.value.slice(0,-1); 
+        }
+
+        function clearDisplay() {
+            document.getElementById('display').value = '';
+        }
+
+        // here is use js built objects
+
+        function calculate() {
+            let display = document.getElementById('display');
+                display.value = eval(display.value);
+            }
+        
+    </script>
+    
 </body>
 </html>
