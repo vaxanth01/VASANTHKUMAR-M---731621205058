@@ -11,14 +11,13 @@
             if (num <= 1) {
                 isPrime = false;
             } else {
-                for (var i = 2; i <= Math.sqrt(num); i++) {
+                for (var i = 2; i <num; i++) {
                     if (num % i === 0) {
                         isPrime = false;
                         break;
                     }
                 }
             }
-            
 
             var result = isPrime ? num + " is a Prime Number." : num + " is not a Prime Number.";
             document.getElementById("primeResult").innerHTML = result;

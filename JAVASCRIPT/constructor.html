@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object creation</title>
+</head>
+<body>
+    <script>
+
+      
+   
+class student{
+    constructor(name,age,department){
+        this.name = name;
+        this.age = age;
+        this.department = department;
+    }
+
+    display(){
+        document.write ( "<br>Student name : "+this.name);
+        document.write ("<br> Student age : "+this.age);
+        document.write ("<br> Student department : "+this.department);
+        document.write ("<br><br><br><br>");
+
+    }
+}
+      var student1 = new student("raja",21,"IT");
+      student1.display();
+      var student2 = new student("kumar",31,"EEE");
+      student2.display();
+      var student3 = new student("kamal",31,"ECE");
+      student3.display();
+    </script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class collage{
+            constructor(department,rooms,student,staff){
+                this.department=department
+                this.rooms=rooms
+                this.student=student
+                this.staff=staff
+        }
+        display(){
+            document.write("department : "+this.department)
+            document.write("rooms : "+this.rooms)
+            document.write("student : "+this.student)
+            document.write("staff : "+this.staff)
+        }
+    }
+    var contntent1 = new collage("IT ",219,"VASANTH ","fullstack")
+    contntent1.display();
+    </script>
+</body>
+</html>
