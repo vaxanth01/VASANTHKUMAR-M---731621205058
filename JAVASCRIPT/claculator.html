@@ -121,7 +121,6 @@ function appendToDisplay(value) {
 function calculate() {
     var displayValue = document.calc.display.value;
     
-    // Regular expression to match numbers and basic arithmetic operators
     var regex = /(\d+\.?\d*)([\+\-\*\/])(\d+\.?\d*)/;
     var match = displayValue.match(regex);
 
@@ -151,13 +150,11 @@ function calculate() {
             default:
                 result = "Error";
         }
-
         document.calc.display.value = result;
     } else {
         document.calc.display.value = "Error";
     }
 }
-
     </script>
 </body>
 </html>
