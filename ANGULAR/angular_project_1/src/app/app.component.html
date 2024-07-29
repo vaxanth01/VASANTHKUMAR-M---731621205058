@@ -1,0 +1,26 @@
+<h1>helo angular</h1>
+
+
+<app-header>
+
+</app-header>
+
+<h1>interpolation</h1>
+name: {{name}} <br>
+age: {{age}} <br>
+department: {{department}} <br>
+
+
+<h1>property binding</h1>
+name <input type="text" [value]="name">
+age <input type="text" [value]="age">
+department <input type="text" [value]="department">
+
+<h1>event binding</h1>
+
+<button (click)="change_name()">change name</button><br><br>
+<button (click)="change_age()">change age</button><br><br>
+<button (click)="change_department()">change department</button><br><br>
+<img [src]="imagepath" alt="okm">
+<button (click)="change_image()">change_image</button><br><br>
+
