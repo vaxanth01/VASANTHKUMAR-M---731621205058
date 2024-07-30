@@ -1,4 +1,4 @@
-<h1>helo angular</h1>
+<!-- <h1>helo angular</h1>
 
 
 <app-header>
@@ -27,4 +27,42 @@ department <input type="text" [value]="department">
 <br>
 enter a first name <input type="text" [(ngModel)]="fname" />
 <br>
-<h4>welcome {{fname}} </h4>
+<h4>welcome {{fname}} </h4> -->
+
+<!-- <h1>structural and attributes</h1>
+
+<button (click)="changeflag()">Show or Hide Div</button>
+
+<div *ngIf="flag"><br>
+  vasanth.
+</div> -->
+
+<!-- <h1>structural and attributes</h1>
+
+<button (click)="chageflag()">Show or Hide Div</button>
+<br><br>
+<div *ngIf="flag"><br>
+  <ul>
+    <li *ngFor="let vec of vehilcels">{{vec}}</li>
+  </ul>
+</div> -->
+
+
+<button (click)="changeFlag()">Show or Hide Div</button>
+<br><br>
+<div *ngIf="flag" [ngStyle]="myStyle">
+    <br>
+  <ul>
+    <li *ngFor="let vec of vehicles" (click)="setSelect(vec)">{{vec}}</li>
+  </ul>
+  <br>you select : {{selectedVehicle}}
+</div>
+
+<br><br>
+
+<div [ngSwitch]="setSelect">
+    <font color="green" *ngSwitchCase="'two'">bike</font>
+    <font color="green" *ngSwitchCase="'three'">auto</font>
+    <font color="green" *ngSwitchCase="'four'">bus</font>
+    <font color="green" *ngSwitchDefault="'two'">invalid</font>
+</div>
