@@ -4,10 +4,9 @@
 <app-header>
 
 </app-header>
-
 <h1>interpolation</h1>
 name: {{name}} <br>
-age: {{age}} <br>
+age: {{age}}<br>
 department: {{department}} <br>
 
 
@@ -24,3 +23,8 @@ department <input type="text" [value]="department">
 <img [src]="imagepath" alt="okm">
 <button (click)="change_image()">change_image</button><br><br>
 
+<h1>two way data binding</h1>
+<br>
+enter a first name <input type="text" [(ngModel)]="fname" />
+<br>
+<h4>welcome {{fname}} </h4>
