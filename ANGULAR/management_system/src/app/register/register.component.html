@@ -1,0 +1,28 @@
+<div class="form_container mt-4">
+    <form #myForm="ngForm" (ngSubmit)="myFunction(myForm.value)">
+      <header>Registration Page</header>
+      
+      <label>Name</label>
+      <input type="text" name="name" ngModel required />
+      
+      <label>Email</label>
+      <input type="email" name="email" ngModel required />
+      
+      <label>Age</label>
+      <input type="number" name="age" ngModel required />
+      
+      <label>Mobile Number</label>
+      <input type="text" name="mobileNo" ngModel required />
+      
+      <label>Country</label>
+      <select name="country" ngModel required>
+        <option value="India">India</option>
+        <option value="China">China</option>
+        <option value="USA">USA</option>
+        <!-- Add more options as needed -->
+      </select>
+      
+      <button type="submit">Register</button>
+    </form>
+  </div>
+  

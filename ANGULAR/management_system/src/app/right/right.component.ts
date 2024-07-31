@@ -1,10 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
+interface Employee {
+  id: number;
+  productName: string;
+  price: number;
+  discount: number;
+  image: string;
+}
 
 @Component({
   selector: 'app-right',
   templateUrl: './right.component.html',
-  styleUrl: './right.component.css'
+  styleUrls: ['./right.component.css']
 })
 export class RightComponent {
-
+  @Input() employees: Employee[] = [];
 }

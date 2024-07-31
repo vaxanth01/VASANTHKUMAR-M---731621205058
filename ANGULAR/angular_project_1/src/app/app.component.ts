@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CalculatorService } from './calculator.service';
 
 @Component({
   selector: 'app-root',
@@ -42,25 +43,36 @@ export class AppComponent {
 //   this.flag =! this.flag;
 // }
 
-flag: boolean;
-vehicles: string[];
-selectedVehicle: string;
-myStyle: {};
+// flag: boolean;
+// vehicles: string[];
+// selectedVehicle: string;
+// myStyle: {};
 
-constructor() {
-  this.flag = true;
-  this.vehicles = ["two", "three", "four", "five"];
-  this.selectedVehicle = "";
-  this.myStyle = {'width': "40%", 'border': '2px solid green', 'border-radius': '20px'};
-}
+// constructor() {
+//   this.flag = true;
+//   this.vehicles = ["two", "three", "four", "five"];
+//   this.selectedVehicle = "";
+//   this.myStyle = {'width': "40%", 'border': '2px solid green', 'border-radius': '20px'};
+// }
 
-changeFlag() {
-  this.flag = !this.flag;
-}
+// changeFlag() {
+//   this.flag = !this.flag;
+// }
 
-setSelect(vec: string) {
-  this.selectedVehicle = vec;
-}
+// setSelect(vec: string) {
+//   this.selectedVehicle = vec;
+// }
+
+// add:number;
+// sub:number;
+// mul:number;
+// div:number;
+// constructor(private calc:CalculatorService){
+//   this.add = calc.getAddition(10,20);
+//   this.sub = calc.getSubtraction(40,20);
+//   this.mul = calc.getmultiplication(40,20);
+//   this.div = calc.getdivide(40,20);
+// }
 }
 
 

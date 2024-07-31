@@ -45,7 +45,7 @@ enter a first name <input type="text" [(ngModel)]="fname" />
   <ul>
     <li *ngFor="let vec of vehilcels">{{vec}}</li>
   </ul>
-</div> -->
+</div>
 
 
 <button (click)="changeFlag()">Show or Hide Div</button>
@@ -65,4 +65,17 @@ enter a first name <input type="text" [(ngModel)]="fname" />
     <font color="green" *ngSwitchCase="'three'">auto</font>
     <font color="green" *ngSwitchCase="'four'">bus</font>
     <font color="green" *ngSwitchDefault="'two'">invalid</font>
+</div> -->
+
+
+
+<table width="80%" align="center">
+  <tr>
+    <th><a routerLink="home">Home</a></th>
+    <th><a routerLink="contact">Contact</a></th>
+    <th><a routerLink="about">about</a></th>
+  </tr>
+</table>
+<div>
+  <router-outlet></router-outlet>
 </div>

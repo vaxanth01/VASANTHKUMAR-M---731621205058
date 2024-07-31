@@ -1,1 +1,12 @@
-<p>right works!</p>
+<div class="card">
+    <div class="card-header">
+      Product List
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item" *ngFor="let emp of employees">
+        {{ emp.id }} - {{ emp.productName }} - {{ emp.price }} - {{ emp.discount }}₹ or % - 
+        <img [src]="emp.image" alt="{{ emp.productName }}" width="50">
+      </li>
+    </ul>
+  </div>
+  

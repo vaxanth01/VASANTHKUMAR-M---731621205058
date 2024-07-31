@@ -1,0 +1,11 @@
+<div class="form_container mt-4">
+    <form #loginForm="ngForm" (ngSubmit)="loginFunction(loginForm.value)">
+      <header>Login Page</header>
+      <label>Email</label>
+      <input type="email" name="email" ngModel required />
+      <label>Password</label>
+      <input type="password" name="password" ngModel required />
+      <button type="submit">Login</button>
+    </form>
+  </div>
+  
