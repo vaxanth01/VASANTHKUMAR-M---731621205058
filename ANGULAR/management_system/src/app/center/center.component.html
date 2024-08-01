@@ -31,9 +31,11 @@
         <label for="stock">Stock</label>
         <input type="number" class="form-control" id="stock" required [(ngModel)]="employee.stock" name="stock">
       </div>
-      <button type="button" class="btn btn-primary p-2 m-3" (click)="saveEmployee()">Save</button>
+      <button type="button" class="btn btn-primary p-2 m-3" (click)="saveEmployee()">Add</button>
       <button type="button" class="btn btn-warning p-2 m-3" (click)="updateEmployee()">Update</button>
       <button type="button" class="btn btn-danger p-2 m-3" (click)="deleteEmployee()">Delete</button>
+      <button type="button" class="btn btn-secondary p-2 m-3" (click)="deleteEmployee()">Find</button>
+      <button type="button" class="btn btn-secondary p-2 m-3" (click)="deleteEmployee()">Find All</button>
     </form>
     <!-- <p *ngIf="message">{{ message }}</p> -->
   </div>
