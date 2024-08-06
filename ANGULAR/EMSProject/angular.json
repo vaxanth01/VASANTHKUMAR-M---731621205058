@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Employee_Management_System": {
+    "EMSProject": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -23,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/employee-management-system",
+            "outputPath": "dist/emsproject",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -74,10 +74,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "Employee_Management_System:build:production"
+              "buildTarget": "EMSProject:build:production"
             },
             "development": {
-              "buildTarget": "Employee_Management_System:build:development"
+              "buildTarget": "EMSProject:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -109,6 +109,6 @@
     }
   },
   "cli": {
-    "analytics": "65c8b8f9-a1c6-43d2-b4d9-077e70a961ef"
+    "analytics": "7b20102a-ff23-43c7-9727-52a9cf096fcd"
   }
 }
