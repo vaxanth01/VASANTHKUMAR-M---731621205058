@@ -45,6 +45,7 @@ const ROUTES:Routes=[
     
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  
 })
 export class AppModule { }

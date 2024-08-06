@@ -1,16 +1,17 @@
 {
-  "name": "emsproject",
+  "name": "pms-project",
   "version": "0.0.0",
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "serve:ssr:EMSProject": "node dist/emsproject/server/server.mjs",
-    "json-server": "json-server --watch db.json --port 3004"
+"scripts": {
+  "ng": "ng",
+  "start": "ng serve",
+  "build": "ng build",
+  "watch": "ng build --watch --configuration development",
+  "test": "ng test",
+  "serve:ssr:PMS_Project": "node dist/pms-project/server/server.mjs",
+  "json-server": "json-server --watch db.json"
+},
 
-  },
+
   "private": true,
   "dependencies": {
     "@angular/animations": "^18.1.0",
