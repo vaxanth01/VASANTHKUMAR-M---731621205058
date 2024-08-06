@@ -18,8 +18,8 @@
                                         product Id
                                     <input type="text" 
                                            class="form-control" 
-                                           name="id" 
-                                           #id="ngModel" ngModel
+                                           name="proid" 
+                                           #proid="ngModel" ngModel
                                            required
                                            pattern="[0-9]+"
                                             />
@@ -28,11 +28,11 @@
                                 </div>
 
 
-                                <div *ngIf="id.touched">
-                                  <div *ngIf="id.errors?.['required']">
+                                <div *ngIf="proid.touched">
+                                  <div *ngIf="proid.errors?.['required']">
                                     <b style="color: red;">Product Id required.</b>
                                   </div>
-                                  <div *ngIf="id.errors?.['pattern']">
+                                  <div *ngIf="proid.errors?.['pattern']">
                                     <font color= "red"><b>Invalid Product Id.</b></font>
                                   </div>
                                 </div>
@@ -108,6 +108,8 @@
                                   </div>
                                 </div>
 
+
+
                                 <div class="form-group">
                                     <label for="Employee Salary">
                                         Product Count
@@ -136,17 +138,17 @@
                                     Insert 
                                 </button>
                             &nbsp;&nbsp;
-                                <button class="btn btn-primary" (click)="updateEmployee(myForm.value)" >
+                                <button class="btn btn-primary" (click)="updateProduct(myForm.value)" >
                                     Update 
                                 </button>&nbsp;&nbsp;
-                                <button class="btn btn-danger" (click)="deleteEmployee(myForm.value)">
+                                <button class="btn btn-danger" (click)="deleteProduct(myForm.value)">
                                     Delete 
                                 </button>&nbsp;&nbsp;
-                                <button class="btn btn-warning"(click)="findEmployee(myForm.value)" >
+                                <button class="btn btn-warning"(click)="findProduct(myForm.value)" >
                                     Find 
                                 </button>
                                 &nbsp;&nbsp;
-                                <button class="btn btn-info" (click)="findAllEmployee()">
+                                <button class="btn btn-info" (click)="findAllProduct()">
                                     Find All
                                 </button>
                             </form>

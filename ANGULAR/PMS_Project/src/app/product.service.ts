@@ -24,13 +24,13 @@ export class ProductService {
     return 'Product Detail Updated';
   }
 
-  deleteProduct(id: number) {
-    this.http.delete<Product>(this.url + '/' + id).subscribe();
+  deleteProduct(proid: number) {
+    this.http.delete<Product>(this.url + '/' + proid).subscribe();
     return 'Product Details Deleted';
   }
 
-  findProduct(id: number) {
-    this.http.get<Product>(this.url + '/' + id).subscribe((data) => (this.product = data));
+  findProduct(proid: number) {
+    this.http.get<Product>(this.url + '/' + proid).subscribe((data) => (this.product = data));
     return this.product;
   }
 

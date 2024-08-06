@@ -23,18 +23,18 @@ export class AppComponent {
   }
 
   insertProduct(data: any) {
-    this.product.id = data.id;
+    this.product.id = data.proid;
     this.product.proName = data.proName;
-    this.product.proPrice = data.proprice;
-    this.product.proimg = data.proprice;
-    this.product.procount = data.proprice;
-    alert(data.id + ' ' + data.proName + ' ' + data.proPrice + ' ' + data.proimg + ' ' + data.procount);
+    this.product.proPrice = data.proPrice;
+    this.product.proimg = data.proimg;
+    this.product.procount = data.procount;
+    alert(data.proid + ' ' + data.proName + ' ' + data.proPrice + ' ' + data.proimg + ' ' + data.procount);
 
     this.result = this.service.insertProduct(this.product);
   }
 
   updateProduct(data: any) {
-    this.product.id = data.id;
+    this.product.id = data.proid;
     this.product.proName = data.proName;
     this.product.proPrice = data.proPrice;
     alert(data.id + ' ' + data.proName + ' ' + data.proPrice+ ' ' + data.procount + ' ' + data.proimg);
@@ -42,10 +42,10 @@ export class AppComponent {
     this.result = this.service.updateProduct(this.product);
   }
   deleteProduct(data: any) {
-    this.result = this.service.deleteProduct(data.id);
+    this.result = this.service.deleteProduct(data.proid);
   }
   findProduct(data: any) {
-    this.product=this.service.findProduct(data.id);
+    this.product=this.service.findProduct(data.proid);
     this.result=this.product.id+" "+ this.product.proName +" "+this.product.proPrice+" "+this.product.procount+" "+this.product.proimg;
   }
   findAllProduct(){
