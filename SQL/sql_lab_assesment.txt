@@ -1,0 +1,610 @@
+SQL*Plus: Release 11.2.0.2.0 Production on Wed Aug 7 12:04:48 2024
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+SQL> connect system
+Enter password:
+Connected.
+SQL> select * from client_master;
+
+CLIENT_NO  NAME
+---------- --------------------------------------------------
+CITY                                                  PINCODE    BAL_DUE
+-------------------------------------------------- ---------- ----------
+C00001     SMITHA JAIN
+Mumbai                                                 400054      15000
+
+C00002     VANDANA RAO
+Chennai                                                780001          0
+
+
+SQL> drop table client_master
+  2
+SQL> drop table client_master;
+
+Table dropped.
+
+SQL> create table tbl_client_master(Client_No number(5),Name varchar2(50),City varchar2(50),Pincode number(6),Bal_due number(5));
+
+Table created.
+
+SQL> desc tbl_client_master
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ CLIENT_NO                                          NUMBER(5)
+ NAME                                               VARCHAR2(50)
+ CITY                                               VARCHAR2(50)
+ PINCODE                                            NUMBER(6)
+ BAL_DUE                                            NUMBER(5)
+
+SQL> alter table tbl_client_master modify CLIENT_NO varchar2(50);
+
+Table altered.
+
+SQL> desc tbl_client_master
+ Name                                      Null?    Type
+ ---------------------------------------- -------- ----------------------------
+ CLIENT_NO                                          VARCHAR2(50)
+ NAME                                               VARCHAR2(50)
+ CITY                                               VARCHAR2(50)
+ PINCODE                                            NUMBER(6)
+ BAL_DUE                                            NUMBER(5)
+
+SQL> insert into tbl_client_master values('C00001','SMITHA JAIN','Mumbai',400054,15000);
+
+1 row created.
+
+SQL>
+SQL> 1 row created.
+SQL> insert into tbl_client_master values('C00002','VANDANA RAO','Chennai',780001,0);
+
+1 row created.
+
+SQL> insert into tbl_client_master values('C00003','PREM PUJARI','Mumbai',40
+
+  2  0057,5000);
+0057,5000)
+*
+ERROR at line 2:
+ORA-00917: missing comma
+
+
+SQL>  insert into tbl_client_master values('C00003','PREM PUJARI','Mumbai',40
+  2  0057,5000);
+0057,5000)
+*
+ERROR at line 2:
+ORA-00917: missing comma
+
+
+SQL> insert into tbl_client_master values('C00003','PREM PUJARI','Mumbai',40
+
+  2
+SQL> select * from client_master
+  2
+SQL> select * from tbl_client_master;
+
+CLIENT_NO
+--------------------------------------------------
+NAME
+--------------------------------------------------
+CITY                                                  PINCODE    BAL_DUE
+-------------------------------------------------- ---------- ----------
+C00001
+SMITHA JAIN
+Mumbai                                                 400054      15000
+
+C00002
+VANDANA RAO
+Chennai                                                780001          0
+
+CLIENT_NO
+--------------------------------------------------
+NAME
+--------------------------------------------------
+CITY                                                  PINCODE    BAL_DUE
+-------------------------------------------------- ---------- ----------
+
+
+SQL> insert into tbl_client_master values('C00003','PREM PUJARI','Mumbai',400057,5000);
+
+1 row created.
+
+SQL> insert into tbl_client_master values('C00004','BASU NATH','Mumbai',400056,0);
+
+1 row created.
+
+SQL> insert into tbl_client_master values('C00005','RAVI SHANKAR','Delhi',100001,2000);
+
+1 row created.
+
+SQL> insert into tbl_client_master values('C00006','ROOPA','Mumbai',400050,0);
+
+1 row created.
+
+SQL> select * from tbl_client_master;
+
+CLIENT_NO
+--------------------------------------------------
+NAME
+--------------------------------------------------
+CITY                                                  PINCODE    BAL_DUE
+-------------------------------------------------- ---------- ----------
+C00001
+SMITHA JAIN
+Mumbai                                                 400054      15000
+
+C00002
+VANDANA RAO
+Chennai                                                780001          0
+
+CLIENT_NO
+--------------------------------------------------
+NAME
+--------------------------------------------------
+CITY                                                  PINCODE    BAL_DUE
+-------------------------------------------------- ---------- ----------
+
+C00003
+PREM PUJARI
+Mumbai                                                 400057       5000
+
+C00004
+BASU NATH
+
+CLIENT_NO
+--------------------------------------------------
+NAME
+--------------------------------------------------
+CITY                                                  PINCODE    BAL_DUE
+-------------------------------------------------- ---------- ----------
+Mumbai                                                 400056          0
+
+C00005
+RAVI SHANKAR
+Delhi                                                  100001       2000
+
+C00006
+
+CLIENT_NO
+--------------------------------------------------
+NAME
+--------------------------------------------------
+CITY                                                  PINCODE    BAL_DUE
+-------------------------------------------------- ---------- ----------
+ROOPA
+Mumbai                                                 400050          0
+
+
+6 rows selected.
+
+SQL> select * from tbl_client_master;
+
+CLIENT_NO
+--------------------------------------------------
+NAME
+--------------------------------------------------
+CITY                                                  PINCODE    BAL_DUE
+-------------------------------------------------- ---------- ----------
+C00001
+SMITHA JAIN
+Mumbai                                                 400054      15000
+
+C00002
+VANDANA RAO
+Chennai                                                780001          0
+
+CLIENT_NO
+--------------------------------------------------
+NAME
+--------------------------------------------------
+CITY                                                  PINCODE    BAL_DUE
+-------------------------------------------------- ---------- ----------
+
+C00003
+PREM PUJARI
+Mumbai                                                 400057       5000
+
+C00004
+BASU NATH
+
+CLIENT_NO
+--------------------------------------------------
+NAME
+--------------------------------------------------
+CITY                                                  PINCODE    BAL_DUE
+-------------------------------------------------- ---------- ----------
+Mumbai                                                 400056          0
+
+C00005
+RAVI SHANKAR
+Delhi                                                  100001       2000
+
+C00006
+
+CLIENT_NO
+--------------------------------------------------
+NAME
+--------------------------------------------------
+CITY                                                  PINCODE    BAL_DUE
+-------------------------------------------------- ---------- ----------
+ROOPA
+Mumbai                                                 400050          0
+
+
+6 rows selected.
+
+SQL> select client_no from tbl_client_master
+  2
+SQL> select client_no from tbl_client_master;
+
+CLIENT_NO
+--------------------------------------------------
+C00001
+C00002
+C00003
+C00004
+C00005
+C00006
+
+6 rows selected.
+
+SQL> select name from tbl_client_master;
+
+NAME
+--------------------------------------------------
+SMITHA JAIN
+VANDANA RAO
+PREM PUJARI
+BASU NATH
+RAVI SHANKAR
+ROOPA
+
+6 rows selected.
+
+SQL> select city from tbl_client_master;
+
+CITY
+--------------------------------------------------
+Mumbai
+Chennai
+Mumbai
+Mumbai
+Delhi
+Mumbai
+
+6 rows selected.
+
+SQL> select bal_due from tbl_client_master;
+
+   BAL_DUE
+----------
+     15000
+         0
+      5000
+         0
+      2000
+         0
+
+6 rows selected.
+
+SQL> create table tbl_sale_order(Order_No VARCHAR(10),Order_Date DATE,Client
+
+  2  _No VARCHAR(10),Salesman_No VARCHAR(10),Dely_Date DATE,Order_Status VARCHAR(
+  3  20));
+_No VARCHAR(10),Salesman_No VARCHAR(10),Dely_Date DATE,Order_Status VARCHAR(
+*
+ERROR at line 2:
+ORA-00911: invalid character
+
+
+SQL> create table tbl_sale_order(Order_No VARCHAR(10),Order_Date DATE,Client_No VARCHAR(10),Salesman_No VARCHAR(10),Dely_Date DATE,Order_Status VARCHAR(20));
+
+Table created.
+
+SQL> INSERT INTO tbl_Sale_Order values('O19001','12-jan-13','C00001','S00001','20-jan-13','In Progress');
+
+1 row created.
+
+SQL> INSERT INTO tbl_Sale_Order values('O19002','25-jan-13','C00002','S00002','27-jan-13','Cancelled');
+
+1 row created.
+
+SQL> INSERT INTO tbl_Sale_Order values('O46865','18-feb-13','C00003','S00003','20-feb-13','Fulfilled');
+
+1 row created.
+
+SQL> INSERT INTO tbl_Sale_Order values('O19003','03-apr-13','C00001','S00001','07-apr-13','Fulfilled');
+
+1 row created.
+
+SQL> INSERT INTO tbl_Sale_Order values('O46866','20-may-13','C00004','S00002','07-apr-13','Cancelled');
+
+1 row created.
+
+SQL> INSERT INTO tbl_Sale_Order values('O19008','24-may-13','C00005','S00004','26-may-13','In Process');
+
+1 row created.
+
+SQL> select * from tbl_sale_order;
+
+ORDER_NO   ORDER_DAT CLIENT_NO  SALESMAN_N DELY_DATE ORDER_STATUS
+---------- --------- ---------- ---------- --------- --------------------
+O19001     12-JAN-13 C00001     S00001     20-JAN-13 In Progress
+O19002     25-JAN-13 C00002     S00002     27-JAN-13 Cancelled
+O46865     18-FEB-13 C00003     S00003     20-FEB-13 Fulfilled
+O19003     03-APR-13 C00001     S00001     07-APR-13 Fulfilled
+O46866     20-MAY-13 C00004     S00002     07-APR-13 Cancelled
+O19008     24-MAY-13 C00005     S00004     26-MAY-13 In Process
+
+6 rows selected.
+
+SQL> select * from tbl_client_master;
+
+CLIENT_NO
+--------------------------------------------------
+NAME
+--------------------------------------------------
+CITY                                                  PINCODE    BAL_DUE
+-------------------------------------------------- ---------- ----------
+C00001
+SMITHA JAIN
+Mumbai                                                 400054      15000
+
+C00002
+VANDANA RAO
+Chennai                                                780001          0
+
+CLIENT_NO
+--------------------------------------------------
+NAME
+--------------------------------------------------
+CITY                                                  PINCODE    BAL_DUE
+-------------------------------------------------- ---------- ----------
+
+C00003
+PREM PUJARI
+Mumbai                                                 400057       5000
+
+C00004
+BASU NATH
+
+CLIENT_NO
+--------------------------------------------------
+NAME
+--------------------------------------------------
+CITY                                                  PINCODE    BAL_DUE
+-------------------------------------------------- ---------- ----------
+Mumbai                                                 400056          0
+
+C00005
+RAVI SHANKAR
+Delhi                                                  100001       2000
+
+C00006
+
+CLIENT_NO
+--------------------------------------------------
+NAME
+--------------------------------------------------
+CITY                                                  PINCODE    BAL_DUE
+-------------------------------------------------- ---------- ----------
+ROOPA
+Mumbai                                                 400050          0
+
+
+6 rows selected.
+
+SQL> select * from tbl_sale_order;
+
+ORDER_NO   ORDER_DAT CLIENT_NO  SALESMAN_N DELY_DATE ORDER_STATUS
+---------- --------- ---------- ---------- --------- --------------------
+O19001     12-JAN-13 C00001     S00001     20-JAN-13 In Progress
+O19002     25-JAN-13 C00002     S00002     27-JAN-13 Cancelled
+O46865     18-FEB-13 C00003     S00003     20-FEB-13 Fulfilled
+O19003     03-APR-13 C00001     S00001     07-APR-13 Fulfilled
+O46866     20-MAY-13 C00004     S00002     07-APR-13 Cancelled
+O19008     24-MAY-13 C00005     S00004     26-MAY-13 In Process
+
+6 rows selected.
+
+SQL> select * from tbl_client_master where Bal_due = 0;
+
+CLIENT_NO
+--------------------------------------------------
+NAME
+--------------------------------------------------
+CITY                                                  PINCODE    BAL_DUE
+-------------------------------------------------- ---------- ----------
+C00002
+VANDANA RAO
+Chennai                                                780001          0
+
+C00004
+BASU NATH
+Mumbai                                                 400056          0
+
+CLIENT_NO
+--------------------------------------------------
+NAME
+--------------------------------------------------
+CITY                                                  PINCODE    BAL_DUE
+-------------------------------------------------- ---------- ----------
+
+C00006
+ROOPA
+Mumbai                                                 400050          0
+
+
+SQL> select client_no from tbl_client_master;
+
+CLIENT_NO
+--------------------------------------------------
+C00001
+C00002
+C00003
+C00004
+C00005
+C00006
+
+6 rows selected.
+
+SQL> update tbl_client_master set city = 'Jaipur' where Client_No = 'C00004';
+
+1 row updated.
+
+SQL> select * from tbl_client_master where client_no ='C00004';
+
+CLIENT_NO
+--------------------------------------------------
+NAME
+--------------------------------------------------
+CITY                                                  PINCODE    BAL_DUE
+-------------------------------------------------- ---------- ----------
+C00004
+BASU NATH
+Jaipur                                                 400056          0
+
+
+SQL>  select * from tbl_client_master where city ='Mumbai';
+
+CLIENT_NO
+--------------------------------------------------
+NAME
+--------------------------------------------------
+CITY                                                  PINCODE    BAL_DUE
+-------------------------------------------------- ---------- ----------
+C00001
+SMITHA JAIN
+Mumbai                                                 400054      15000
+
+C00003
+PREM PUJARI
+Mumbai                                                 400057       5000
+
+CLIENT_NO
+--------------------------------------------------
+NAME
+--------------------------------------------------
+CITY                                                  PINCODE    BAL_DUE
+-------------------------------------------------- ---------- ----------
+
+C00006
+ROOPA
+Mumbai                                                 400050          0
+
+
+SQL> select so.Order_No, ck.Name, ck.City, ck.Pincode From tbl_Sale_Order so
+
+  2   JOIN tbl_Client_master ck ON so.Client_No = ck.Client_No where So.Order_No
+  3  IN ('019003','019002');
+
+no rows selected
+
+SQL> select so.Order_No, ck.Name, ck.City, ck.Pincode From tbl_Sale_Order so JOIN tbl_Client_Master ck ON so.Client_No = ck.Client_No where So.Order_No IN ('O19003','O19002');
+
+ORDER_NO   NAME
+---------- --------------------------------------------------
+CITY                                                  PINCODE
+-------------------------------------------------- ----------
+O19003     SMITHA JAIN
+Mumbai                                                 400054
+
+O19002     VANDANA RAO
+Chennai                                                780001
+
+
+SQL> SELECT Name || ' lives in the city of ' || City AS Sentence FROM tbl_Cl
+
+  2  ient_Master;
+SELECT Name || ' lives in the city of ' || City AS Sentence FROM tbl_Cl
+                                                                 *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> SELECT Name || ' lives in the city of ' || City AS Sentence FROM tbl_Client_Master;
+
+SENTENCE
+--------------------------------------------------------------------------------
+SMITHA JAIN lives in the city of Mumbai
+VANDANA RAO lives in the city of Chennai
+PREM PUJARI lives in the city of Mumbai
+BASU NATH lives in the city of Jaipur
+RAVI SHANKAR lives in the city of Delhi
+ROOPA lives in the city of Mumbai
+
+6 rows selected.
+
+SQL> select ck.client_no,ck.name,ck.city,ck.pincode FROM tbl_client_master c
+
+  2  k JOIN tbl_sale_order So ON ck.client_no = so.client_no where so.order_statu
+  3
+SQL> select ck.client_no,ck.name,ck.city,ck.pincode FROM tbl_client_master ck JOIN tbl_sale_order So ON ck.client_no = so.client_no where so.order_status = 'In Progress';
+
+CLIENT_NO
+--------------------------------------------------
+NAME
+--------------------------------------------------
+CITY                                                  PINCODE
+-------------------------------------------------- ----------
+C00001
+SMITHA JAIN
+Mumbai                                                 400054
+
+
+SQL> select ck.client_no,ck.name,ck.city,ck.pincode FROM tbl_client_master ck JOIN tbl_sale_order So ON ck.client_no = So.client_no where So.order_statu
+
+  2  s = 'In Progress';
+s = 'In Progress'
+*
+ERROR at line 2:
+ORA-00920: invalid relational operator
+
+
+SQL> select ck.client_no,ck.name,ck.city,ck.pincode FROM tbl_client_master ck JOIN tbl_sale_order So ON ck.client_no = So.client_no where So.order_status = 'In Progress';
+
+CLIENT_NO
+--------------------------------------------------
+NAME
+--------------------------------------------------
+CITY                                                  PINCODE
+-------------------------------------------------- ----------
+C00001
+SMITHA JAIN
+Mumbai                                                 400054
+
+
+SQL> select ck.client_no,ck.name,ck.city,ck.pincode FROM tbl_client_master ck JOIN tbl_sale_order So ON ck.Client_No = so.Client_No where so.order_status = 'In Progress';
+
+CLIENT_NO
+--------------------------------------------------
+NAME
+--------------------------------------------------
+CITY                                                  PINCODE
+-------------------------------------------------- ----------
+C00001
+SMITHA JAIN
+Mumbai                                                 400054
+
+
+SQL> SELECT DISTINCT Order_Status FROM tbl_sale_order;
+
+ORDER_STATUS
+--------------------
+In Process
+Fulfilled
+In Progress
+Cancelled
+
+SQL> SELECT ck.Client_No, ck.Name, ck.City, ck.Pincode FROM tbl_client_master ck JOIN tbl_sale_order so ON ck.Client_No = so.Client_No WHERE TRIM(so.Order_Status) IN ('InProcess', 'In Progress');
+
+CLIENT_NO
+--------------------------------------------------
+NAME
+--------------------------------------------------
+CITY                                                  PINCODE
+-------------------------------------------------- ----------
+C00001
+SMITHA JAIN
+Mumbai                                                 400054
