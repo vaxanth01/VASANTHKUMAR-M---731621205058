@@ -1,0 +1,457 @@
+SQL> create table tbl_student(eid number(10),ename varchar2(20),age number(10),esalary number(10));
+
+Table created.
+
+SQL> insert into tbl_student values(16,'Glad',22,5000);
+
+1 row created.
+
+SQL> insert into tbl_student values(63,'Yash',22,7000);
+
+1 row created.
+
+SQL> insert into tbl_student values(25,'Nithaj',22,7000);
+
+1 row created.
+
+SQL> insert into tbl_student values(8,'Logesh',22,5500);
+
+1 row created.
+
+SQL> select * from tbl_student;
+
+       EID ENAME                       AGE    ESALARY
+---------- -------------------- ---------- ----------
+        16 Glad                         22       5000
+        63 Yash                         22       7000
+        25 Nithaj                       22       7000
+         8 Logesh                       22       5500
+
+SQL> commit;
+
+Commit complete.
+
+SQL> select * from tbl_student where eid in (16,63);
+
+       EID ENAME                       AGE    ESALARY
+---------- -------------------- ---------- ----------
+        16 Glad                         22       5000
+        63 Yash                         22       7000
+
+SQL> select * from tbl_student where ename in ('Glad','Yash');
+
+       EID ENAME                       AGE    ESALARY
+---------- -------------------- ---------- ----------
+        16 Glad                         22       5000
+        63 Yash                         22       7000
+
+SQL> select * from tbl_student where ename not in ('Glad','Yash');
+
+       EID ENAME                       AGE    ESALARY
+---------- -------------------- ---------- ----------
+        25 Nithaj                       22       7000
+         8 Logesh                       22       5500
+
+SQL> select * from tbl_student where esalary betweem 5000 and 6000;
+select * from tbl_student where esalary betweem 5000 and 6000
+                                        *
+ERROR at line 1:
+ORA-00920: invalid relational operator
+
+
+SQL> select * from tbl_student where esalary between 5000 and 6000;
+
+       EID ENAME                       AGE    ESALARY
+---------- -------------------- ---------- ----------
+        16 Glad                         22       5000
+         8 Logesh                       22       5500
+
+SQL> select * from tbl_student where esalary not between 5000 and 6000;
+
+       EID ENAME                       AGE    ESALARY
+---------- -------------------- ---------- ----------
+        63 Yash                         22       7000
+        25 Nithaj                       22       7000
+
+SQL> select * from tbl_student where esalary not between 7000 and 5000;
+
+       EID ENAME                       AGE    ESALARY
+---------- -------------------- ---------- ----------
+        16 Glad                         22       5000
+        63 Yash                         22       7000
+        25 Nithaj                       22       7000
+         8 Logesh                       22       5500
+
+SQL> select * from tbl_student where esalary between 7000 and 5000;
+
+no rows selected
+
+SQL> select * from tbl_student where eid in (16,63) and esalary >4000;
+
+       EID ENAME                       AGE    ESALARY
+---------- -------------------- ---------- ----------
+        16 Glad                         22       5000
+        63 Yash                         22       7000
+
+SQL> select * from tbl_student where eid in (16,63,8) and esalary >9000;
+
+no rows selected
+
+SQL> select * from tbl_student where eid >8 and esalary< 4000;
+
+no rows selected
+
+SQL> select * from tbl_student where eid >8 or esalary< 4000;
+
+       EID ENAME                       AGE    ESALARY
+---------- -------------------- ---------- ----------
+        16 Glad                         22       5000
+        63 Yash                         22       7000
+        25 Nithaj                       22       7000
+
+SQL> insert into tbl_student (eid,esalary) values(18,6500);
+
+1 row created.
+
+SQL> commit;
+
+Commit complete.
+
+SQL> select * from tbl_student;
+
+       EID ENAME                       AGE    ESALARY
+---------- -------------------- ---------- ----------
+        16 Glad                         22       5000
+        63 Yash                         22       7000
+        25 Nithaj                       22       7000
+         8 Logesh                       22       5500
+        18                                       6500
+
+SQL> select * from tbl_student where ename is null;
+
+       EID ENAME                       AGE    ESALARY
+---------- -------------------- ---------- ----------
+        18                                       6500
+
+SQL> select * from tbl_student where ename is not null;
+
+       EID ENAME                       AGE    ESALARY
+---------- -------------------- ---------- ----------
+        16 Glad                         22       5000
+        63 Yash                         22       7000
+        25 Nithaj                       22       7000
+         8 Logesh                       22       5500
+
+SQL> select * from tbl_employee where ename like 'G%';
+select * from tbl_employee where ename like 'G%'
+              *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> select * from tbl_student where ename like 'G%';
+
+       EID ENAME                       AGE    ESALARY
+---------- -------------------- ---------- ----------
+        16 Glad                         22       5000
+
+SQL> select * from tbl_student where ename like 'a%';
+
+no rows selected
+
+SQL> select * from tbl_student where ename like '_a%';
+
+       EID ENAME                       AGE    ESALARY
+---------- -------------------- ---------- ----------
+        63 Yash                         22       7000
+
+SQL> select * from tbl_student where ename like '__t%';
+
+       EID ENAME                       AGE    ESALARY
+---------- -------------------- ---------- ----------
+        25 Nithaj                       22       7000
+
+SQL> select * from tbl_student where ename like '%a%';
+
+       EID ENAME                       AGE    ESALARY
+---------- -------------------- ---------- ----------
+        16 Glad                         22       5000
+        63 Yash                         22       7000
+        25 Nithaj                       22       7000
+
+SQL> select * from tbl_student where ename like '%j';
+
+       EID ENAME                       AGE    ESALARY
+---------- -------------------- ---------- ----------
+        25 Nithaj                       22       7000
+
+SQL> select * from tbl_student where ename not like '%a%';
+
+       EID ENAME                       AGE    ESALARY
+---------- -------------------- ---------- ----------
+         8 Logesh                       22       5500
+
+SQL> select * from tbl_student order by eid;
+
+       EID ENAME                       AGE    ESALARY
+---------- -------------------- ---------- ----------
+         8 Logesh                       22       5500
+        16 Glad                         22       5000
+        18                                       6500
+        25 Nithaj                       22       7000
+        63 Yash                         22       7000
+
+SQL> select * from tbl_student order by ename;
+
+       EID ENAME                       AGE    ESALARY
+---------- -------------------- ---------- ----------
+        16 Glad                         22       5000
+         8 Logesh                       22       5500
+        25 Nithaj                       22       7000
+        63 Yash                         22       7000
+        18                                       6500
+
+SQL> select * from tbl_student order by ename desc;
+
+       EID ENAME                       AGE    ESALARY
+---------- -------------------- ---------- ----------
+        18                                       6500
+        63 Yash                         22       7000
+        25 Nithaj                       22       7000
+         8 Logesh                       22       5500
+        16 Glad                         22       5000
+
+SQL> alter table tbl_student add doj date;
+
+Table altered.
+
+SQL> select * from tbl_student ;
+
+       EID ENAME                       AGE    ESALARY DOJ
+---------- -------------------- ---------- ---------- ---------
+        16 Glad                         22       5000
+        63 Yash                         22       7000
+        25 Nithaj                       22       7000
+         8 Logesh                       22       5500
+        18                                       6500
+
+SQL> desc tbl_student;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EID                                                NUMBER(10)
+ ENAME                                              VARCHAR2(20)
+ AGE                                                NUMBER(10)
+ ESALARY                                            NUMBER(10)
+ DOJ                                                DATE
+
+SQL> update tbl_student set doj = sysdat where eid = 16;
+update tbl_student set doj = sysdat where eid = 16
+                             *
+ERROR at line 1:
+ORA-00904: "SYSDAT": invalid identifier
+
+
+SQL> update tbl_student set doj = sysdate where eid = 16;
+
+1 row updated.
+
+SQL> select * from tbl_student ;
+
+       EID ENAME                       AGE    ESALARY DOJ
+---------- -------------------- ---------- ---------- ---------
+        16 Glad                         22       5000 07-AUG-24
+        63 Yash                         22       7000
+        25 Nithaj                       22       7000
+         8 Logesh                       22       5500
+        18                                       6500
+
+SQL> update tbl_student set doj = '05-Aug-24' where eid = 63;
+
+1 row updated.
+
+SQL> select * from tbl_student ;
+
+       EID ENAME                       AGE    ESALARY DOJ
+---------- -------------------- ---------- ---------- ---------
+        16 Glad                         22       5000 07-AUG-24
+        63 Yash                         22       7000 05-AUG-24
+        25 Nithaj                       22       7000
+         8 Logesh                       22       5500
+        18                                       6500
+
+SQL> update tbl_student set doj = sysdate where eid = (8,25);
+update tbl_student set doj = sysdate where eid = (8,25)
+                                               *
+ERROR at line 1:
+ORA-01797: this operator must be followed by ANY or ALL
+
+
+SQL> update tbl_student set doj = sysdate where eid in (8,25);
+
+2 rows updated.
+
+SQL> select * from tbl_student ;
+
+       EID ENAME                       AGE    ESALARY DOJ
+---------- -------------------- ---------- ---------- ---------
+        16 Glad                         22       5000 07-AUG-24
+        63 Yash                         22       7000 05-AUG-24
+        25 Nithaj                       22       7000 07-AUG-24
+         8 Logesh                       22       5500 07-AUG-24
+        18                                       6500
+
+SQL> alter table tbl_student drop column doj;
+
+Table altered.
+
+SQL> select * from tbl_student ;
+
+       EID ENAME                       AGE    ESALARY
+---------- -------------------- ---------- ----------
+        16 Glad                         22       5000
+        63 Yash                         22       7000
+        25 Nithaj                       22       7000
+         8 Logesh                       22       5500
+        18                                       6500
+
+SQL> desc tbl_student
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EID                                                NUMBER(10)
+ ENAME                                              VARCHAR2(20)
+ AGE                                                NUMBER(10)
+ ESALARY                                            NUMBER(10)
+
+SQL> alter table tbl_student modify esalary number(50);
+alter table tbl_student modify esalary number(50)
+                                              *
+ERROR at line 1:
+ORA-01727: numeric precision specifier is out of range (1 to 38)
+
+
+SQL> alter table tbl_student modify esalary number(15);
+
+Table altered.
+
+SQL> alter table tbl_student modify esalary number(10);
+alter table tbl_student modify esalary number(10)
+                               *
+ERROR at line 1:
+ORA-01440: column to be modified must be empty to decrease precision or scale
+
+
+SQL> desc tbl_student;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EID                                                NUMBER(10)
+ ENAME                                              VARCHAR2(20)
+ AGE                                                NUMBER(10)
+ ESALARY                                            NUMBER(15)
+
+SQL> alter table tbl_student rename column age to eage;
+
+Table altered.
+
+SQL> select * from tbl_student ;
+
+       EID ENAME                      EAGE    ESALARY
+---------- -------------------- ---------- ----------
+        16 Glad                         22       5000
+        63 Yash                         22       7000
+        25 Nithaj                       22       7000
+         8 Logesh                       22       5500
+        18                                       6500
+
+SQL> delete from tbl_student eid = 18;
+delete from tbl_student eid = 18
+                            *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+SQL> delete from tbl_student where eid = 18;
+
+1 row deleted.
+
+SQL> select * from tbl_student ;
+
+       EID ENAME                      EAGE    ESALARY
+---------- -------------------- ---------- ----------
+        16 Glad                         22       5000
+        63 Yash                         22       7000
+        25 Nithaj                       22       7000
+         8 Logesh                       22       5500
+
+SQL> rollback;
+
+Rollback complete.
+
+SQL> select * from tbl_student ;
+
+       EID ENAME                      EAGE    ESALARY
+---------- -------------------- ---------- ----------
+        16 Glad                         22       5000
+        63 Yash                         22       7000
+        25 Nithaj                       22       7000
+         8 Logesh                       22       5500
+        18                                       6500
+
+SQL> rename tbl_student to tbl_emp;
+
+Table renamed.
+
+SQL> drop table tbl_emp;
+
+Table dropped.
+
+SQL> flashback;
+flashback
+        *
+ERROR at line 1:
+ORA-00905: missing keyword
+
+
+SQL> flashback tbl_emp;
+flashback tbl_emp
+          *
+ERROR at line 1:
+ORA-00905: missing keyword
+
+
+SQL> flashback table tbl_emp;
+flashback table tbl_emp
+*
+ERROR at line 1:
+ORA-00439: feature not enabled: Flashback Table
+
+
+SQL> truncate table table_emp;
+truncate table table_emp
+               *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> truncate table tbl_employee;
+truncate table tbl_employee
+               *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> truncate table tbl_employee1;
+
+Table truncated.
+
+SQL> select * from tbl_employee1;
+
+no rows selected
+
+SQL> desc tbl_employee1;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EID                                                NUMBER(5)
+ ENAME                                              VARCHAR2(20)
+ ESALARY                                            NUMBER(5)
+
+SQL>
