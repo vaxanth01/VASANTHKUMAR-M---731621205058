@@ -1,17 +1,27 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<projectDescription>
-	<name>JAVA</name>
-	<comment></comment>
-	<projects>
-	</projects>
-	<buildSpec>
-		<buildCommand>
-			<name>org.eclipse.jdt.core.javabuilder</name>
-			<arguments>
-			</arguments>
-		</buildCommand>
-	</buildSpec>
-	<natures>
-		<nature>org.eclipse.jdt.core.javanature</nature>
-	</natures>
-</projectDescription>
+class Person {
+    // Attributes
+    String name;
+    int age;
+
+    // Constructor
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // Method to display the person's details
+    public void displayPersonDetails() {
+        System.out.println("Name: " + name + ", Age: " + age);
+    }
+
+    // Main method to run the program
+    public static void main(String[] args) {
+        // Creating two instances of the Person class
+        Person person1 = new Person("Alice", 25);
+        Person person2 = new Person("Bob", 30);
+
+        // Displaying their details
+        person1.displayPersonDetails();
+        person2.displayPersonDetails();
+    }
+}
