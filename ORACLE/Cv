@@ -1,0 +1,43 @@
+import cv2
+from pyzbar import pyzbar
+
+def decode_barcode(image):
+    # Detect barcodes in the image
+    barcodes = pyzbar.decode(image)
+    
+    for barcode in barcodes:
+        # Get the bounding box coordinates
+        x, y, w, h = barcode.rect
+        barcode_image = image[y:y+h, x:x+w]
+        
+        # Crop the barcode from the image
+        cropped_barcode = image[y:y+h, x:x+w]
+        
+        # Save the cropped image
+        cv2.imwrite('cropped_barcode.png', cropped_barcode)
+        
+        # Enhance the barcode image for better visibility (optional)
+        enhanced_barcode = cv2.bilateralFilter(cropped_barcode, 9, 75, 75)
+        cv2.imwrite('enhanced_barcode.png', enhanced_barcode)
+        
+        return barcode_image, enhanced_barcode
+
+def main(image_path):
+    # Load the image
+    image = cv2.imread(image_path)
+    
+    # Convert image to grayscale for better detection
+    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    
+    # Decode and process the barcode
+    barcode_image, enhanced_barcode = decode_barcode(gray)
+    
+    if barcode_image is not None:
+        print("Barcode detected and cropped successfully.")
+    else:
+        print("No barcode detected.")
+
+if __name__ == "__main__":
+    # Specify the path to your image here
+    image_path = "path_to_your_image.jpg"
+    main(image_path)
